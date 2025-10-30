@@ -1,0 +1,41 @@
+
+services:
+  php-apache-environment:
+    build:
+      context: .
+      dockerfile: ./php/Dockerfile
+    container_name: php-web-test
+    ports:
+      - "8091:80"
+    volumes:
+      - ./src:/var/www/html
+    depends_on:
+      - mysql-db
+
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: admin1234
+      MYSQL_DATABASE: test_db
+      MYSQL_USER: user1
+      MYSQL_PASSWORD: admin1234
+    volumes:
+      - mysql_data:/var/lib/mysql
+    ports:
+      - "3311:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql-db
+      PMA_USER: user1
+      PMA_PASSWORD: admin1234
+    ports:
+      - "8092:80"
+    depends_on:
+      - mysql-db
+
+volumes:
+  mysql_data:

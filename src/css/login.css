@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(75, 14, 154, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* ===== FORM MAIN STYLE ===== */
+form {
+  border-radius: 20px;
+  background-color: white;
+  padding: 50px 40px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-weight: 800 !important;
+}
+
+.form-control {
+  color: rgba(0, 0, 0, .87);
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .42);
+  border-radius: 4px 4px 0 0;
+  box-shadow: none !important;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(75, 14, 154, 1) 35%, rgba(0, 212, 255, 1) 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px;
+  transition: 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.02);
+}
+
+.register-link {
+  text-align: right;
+}
+
+.register-link a {
+  color: green;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.8s ease;
+}
+
+.register-link a:hover {
+  color: greenyellow ;
+  transform: translateY(-2px);
+}
+
+
+/* ===== RESPONSIVE ===== */
+
+/* มือถือแนวตั้ง (iPhone SE, 6/7/8, Android เล็กๆ) */
+@media (max-width: 480px) {
+  form {
+    width: 90%;
+    padding: 30px 20px;
+  }
+  h4 {
+    font-size: 1.5rem;
+  }
+  .btn-primary {
+    font-size: 0.9rem;
+  }
+  
+}
+
+/* iPhone Plus / iPhone 14 / มือถือจอใหญ่แนวตั้ง */
+@media (min-width: 481px) and (max-width: 767px) {
+  form {
+    width: 80%;
+    padding: 40px 25px;
+  }
+}
+
+/* iPad / Tablet แนวตั้ง */
+@media (min-width: 768px) and (max-width: 991px) {
+  form {
+    width: 60%;
+  }
+}
+
+/* iPad แนวนอน / Laptop จอเล็ก */
+@media (min-width: 992px) and (max-width: 1199px) {
+  form {
+    width: 40%;
+  }
+}
+
+/* Desktop / จอใหญ่ */
+@media (min-width: 1200px) {
+  form {
+    width: 25%;
+  }
+}
