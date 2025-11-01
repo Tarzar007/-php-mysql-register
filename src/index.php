@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "./server/connect.php";
 ?>
 
@@ -36,7 +37,22 @@ require_once "./server/connect.php";
     </form>
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <?php
+    if (isset($_SESSION['error'])) {
+        $message = $_SESSION['error'];
+        unset($_SESSION['error']);
+        echo "<script>
+        Swal.fire({
+            title: '$message',
+            icon: 'error',
+            timer: 2300,
+            showConfirmButton: true ,
+            confirmButtonText: 'ตกลง'
+        });
+    </script>";
+    }
+    ?>
 </body>
 
 

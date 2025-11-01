@@ -23,12 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // echo "เข้าสู่ระบบสำเร็จ!";
             exit();
         } else {
-            $_SESSION['error'] = "รหัสผ่านไม่ถูกต้อง";
+            $_SESSION['error'] = "ผู้ใช้หรือรหัสผ่านไม่ถูกต้อง!!";
         }
     } else {
         $_SESSION['error'] = "ไม่พบผู้ใช้ในระบบ";
     }
     // echo "รหัสผ่านหรือผู้ใช้ไม่ถืกต้อง!";
-    header("Location: ../login.php");
+    header("Location: ../index.php");
     exit();
 }
