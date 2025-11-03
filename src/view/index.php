@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php session_start();
+// if (!isset($_SESSION['user_login'])) {
+//     header("Location: ../index.php");
+//     exit();
+// }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +14,7 @@
 </head>
 
 <body>
+    <?php include_once "nav.php" ?>
     <h1>ยินดีต้อนรับครับสุดหล่อ</h1>
     <p>คุณ: <?php echo htmlspecialchars($_SESSION['fullname']);   ?></p>
     <p>อีเมล: <?php echo htmlspecialchars($_SESSION['gmail']); ?></p>

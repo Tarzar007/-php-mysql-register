@@ -28,7 +28,6 @@ require_once "./server/connect.php";
                     required>
                 <!-- <div id="emailHelp" class="form-text mt-3">Forget password ?</div> -->
             </div>
-
             <button type="submit" class="btn btn-primary mt-5">Login</button>
             <div class="register-link mt-3">
                 <a href="./view/register.php">Register</a>
